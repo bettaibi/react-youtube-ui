@@ -1,0 +1,207 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #fafafa;
+}
+.header{
+    padding: 0 1rem;
+    height: 56px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.video-sections{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    border-top: 4px solid #ccc;
+    gap: 2rem 1rem;
+    margin: 0 1rem;
+    padding: 2rem 0;
+}
+.video-sections:first-child{
+    border-top: none;
+}
+
+.video-container{
+    display: flex;
+    flex-direction: column;
+}
+.thumbnail{
+    position: relative;
+    display: flex;
+}
+.thumbnail::before{
+    content: attr(data-duration);
+    position: absolute;
+    background-color: rgba(0,0,0,.85);
+    color: #fff;
+    right: 5px;
+    bottom: 5px;
+    padding: .1em .3em;
+    border-radius: .3em;
+    font-size: .9rem;
+}
+.thumbnail img{
+    height: 100%;
+    width: 100%;
+    min-width: 250px;
+    min-height: 150px;
+    background-color: #AAA;
+}
+.channel-icon{
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    margin-right: .75rem;
+    background-color: #AAA;
+}
+.video-bottom-section{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+.video-bottom-section a{
+    text-decoration: none;
+}
+.video-details{
+    display: flex;
+    flex-direction: column;
+}
+.video-title{
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+    color: black;
+}
+.video-channel-name{
+    margin-bottom: .1rem;
+    transition: color 150ms;
+}
+.video-channel-name:hover{
+    color: #111;
+}
+.video-metada, .video-channel-name{
+    color: #555;
+}
+
+#chips{
+    transform: translateX(0);
+    display: flex;
+    transition: transform 300ms;
+}
+
+.tags{
+    padding: .8rem 1rem;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    position: relative;
+    overflow: hidden;
+}
+.tags .left-arrow{
+    left: 0;
+}
+.tags .right-arrow{
+    right: 0;
+}
+.tags .left-arrow, .tags .right-arrow{
+    opacity: 0.75;                /* Opacity (Transparency) */
+    color: #030303;   /* RGBA Color (Alternative Transparency) */
+    -webkit-filter: blur(4px);    /* Blur */
+    -moz-filter: blur(4px);
+    filter: blur(4px);
+    text-align: center;
+    top: 0;
+    padding: 1rem;
+    height: 100%;
+    background-color: #fff;
+    width: 80px;
+    min-width: 80px;
+    position: absolute;
+}
+.tags .left-arrow img, .tags .right-arrow img{
+    vertical-align: -webkit-baseline-middle;
+}
+.tags .tag{
+    background-color: #E7E7E7;
+    color: #030303;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    border-radius: 900px;
+    margin-right: .6rem;
+    font-size: 14px;
+    white-space: nowrap;
+    outline: none;
+    transition: background-color 150ms;
+
+}
+.tags .tag:hover{
+    background-color: #DDD;
+}
+.tags .tag.active{
+    background-color: #606060;
+    color: #fff;
+    font-weight: 600;
+}
+.tags .tag:last-child{
+    margin-right: 0;
+}
+header .logo{
+    height: 20px;
+}
+.icons img{
+    height: 24px;
+    filter: opacity(0.65);
+    margin-left: 1rem;
+}
+.search{
+    display: flex;
+    flex-direction: row;
+    height: 32px;
+    flex: 1;
+    justify-content: center;
+}
+.search input{
+    height: 100%;
+    width: 60%;
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: .25rem 0 0 .25rem ;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 0 1rem;
+    outline: none;
+}
+.search input:focus{
+    border-color: royalblue;
+}
+.search button{
+    width: 64px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 0 .25rem .25rem 0;
+    outline: none;
+    border-left: none;
+    cursor: pointer;
+    transition: background-color 200ms;
+}
+.search button:hover{
+    background-color: #DDD;
+}
+.search button:active{
+    background-color: #EEE;
+}
